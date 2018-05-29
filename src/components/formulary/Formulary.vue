@@ -6,14 +6,20 @@
         <option v-for="title in titles" :key="title.value" :value="title.value">{{ title.label }}</option>
       </select>
       <input type="text" placeholder="Tia Maria da Conceição" @input="name = $event.target.value" />
-      <button>Gerar</button>
+      <gerabens-button type="submit" label="Gerar" />
     </form>
   </div>
 </template>
 
 <script>
+import Button from '../shared/button/Button';
+
 export default {
-  
+
+  components: {
+    'gerabens-button': Button,
+  },
+
   data() {
     return {
       name: '',
